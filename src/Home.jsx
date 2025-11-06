@@ -27,7 +27,7 @@ let del = (index)=>{
 let check = ()=>{
    
     if (person1.length > 0) {
-    let divide = total / person1.length;
+    let divide = Math.floor(total / person1.length);
     setnumber(divide);
     setboolean(true);
   } else {
