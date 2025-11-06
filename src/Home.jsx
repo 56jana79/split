@@ -9,8 +9,14 @@ const Home = () => {
      const[total , settotal] = useState(0);
      const[boolean , setboolean] = useState(false)
     let adder =()=>{
-        setperson(newperson1=>[...newperson1 , data])
+      if(data!="")
+      {
+           setperson(newperson1=>[...newperson1 , data])
         setdata("");
+      }else{
+        alert("You need to add some memeber")
+      }
+        
     }
 
 let del = (index)=>{
@@ -31,13 +37,17 @@ let check = ()=>{
   }
 }
 
+let reset = ()=>{
+  window.location.reload();
+}
+
   return (
     <div>
       <h1> S-p-l-i-t</h1>
 
   <div className="usercontainer">
     <input className='userinput' value={data} type="text" onChange={(e)=> setdata(e.target.value)}  /><br />
-<button onClick={adder} >Add Member</button> 
+<button onClick={adder} style={{backgroundColor:"Highlight"}} >Add Member</button> 
 <div className='gap'>
 <div className="adder">
   {person1.map((item, index) => {
@@ -56,7 +66,9 @@ let check = ()=>{
 
 <div className='main-container'>
     <h3>Enter the Total Amount</h3>
-      <input type="text"  onChange={(e)=>settotal(e.target.value)} /> <button onClick={check} >check</button>
+      <input type="text"  onChange={(e)=>settotal(e.target.value)} /> 
+      <button onClick={check} style={{backgroundColor:"Highlight"}}  >check</button>
+     
       <div className='split-main-container'>
     {boolean && person1.map(( item , index)=>{
        return(
@@ -71,6 +83,7 @@ let check = ()=>{
        )
     })}
       </div>
+       <button onClick={reset} style={{backgroundColor:"ButtonText"}}  >Reset</button>
 </div>
 
 <div className='container1'>
