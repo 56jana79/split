@@ -8,17 +8,15 @@ const Home = () => {
      const[number , setnumber] = useState(0);
      const[total , settotal] = useState(0);
      const[boolean , setboolean] = useState(false)
-    let adder =()=>{
-      if(data!="")
-      {
-           setperson(newperson1=>[...newperson1 , data])
-        setdata("");
-      }else{
-        alert("You need to add some memeber")
-      }
-        
-    }
-
+   let adder = () => {
+  // condition: data is not empty, not just spaces, and not a pure number
+  if (data.trim() !== "" && !/^\d+$/.test(data) && data!=" ") {
+    setperson((newperson1) => [...newperson1, data]);
+    setdata("");
+  } else {
+    alert("Please enter a valid name (not just numbers)");
+  }
+};
 let del = (index)=>{
     setperson(person1.filter((_,i)=>i!==index))
 }
