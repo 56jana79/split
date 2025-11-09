@@ -70,7 +70,7 @@ const Home = () => {
         <h3>Enter the Total Amount</h3>
         <input
         className="inputholder"
-          type="number"
+          type="text"
           placeholder="Enter total amount"
           onChange={(e) => settotal(Number(e.target.value))}
         />
@@ -86,7 +86,7 @@ const Home = () => {
             ))}
         </div>
 
-        <button onClick={reset}>Reset</button>
+        <button  className="reset" onClick={reset} style={{background:"black"}} >Reset</button>
         <ShareButton   containerId="split-result" />
       </div>
     </div>

@@ -77,7 +77,7 @@ const ShareButton = ({ containerId }) => {
       onClick={handleShare}
       style={{
         cursor: "pointer",
-        background: isIOS ? "#25D366" : "#ff9f43",
+        background: isIOS ? "#25D366" : "#8c2393ff",
         display: "flex",
         alignItems: "center",
         gap: "8px",
