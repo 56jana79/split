@@ -87,7 +87,7 @@ const Home = () => {
         </div>
 
         <button onClick={reset}>Reset</button>
-        <ShareButton containerId="split-result" />
+        <ShareButton   containerId="split-result" />
       </div>
     </div>
   );
