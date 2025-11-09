@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Home.css'
+import ShareButton from './ShareButton'
 
 const Home = () => {
 
@@ -10,7 +11,7 @@ const Home = () => {
      const[boolean , setboolean] = useState(false)
    let adder = () => {
   // condition: data is not empty, not just spaces, and not a pure number
-  if (data.trim() !== "" && !/^\d+$/.test(data) && data!=" ") {
+  if (data.trim() !== "" && !/^[0-9]+$/.test(data) && data!=" " ) {
     setperson((newperson1) => [...newperson1, data]);
     setdata("");
   } else {
@@ -67,11 +68,11 @@ let reset = ()=>{
       <input type="text"  onChange={(e)=>settotal(e.target.value)} /> 
       <button onClick={check} style={{backgroundColor:"Highlight"}}  >check</button>
      
-      <div className='split-main-container'>
+      <div  id='split-result' className='split-main-container'>
     {boolean && person1.map(( item , index)=>{
        return(
         <>
-        <div className='inner'>
+        <div key={index} className='inner'>
 
             <label htmlFor="item">{item}</label> 
            <h2>{number}</h2>
@@ -82,7 +83,9 @@ let reset = ()=>{
     })}
       </div>
        <button onClick={reset} style={{backgroundColor:"ButtonText"}}  >Reset</button>
+       <ShareButton containerId="split-result" />
 </div>
+
 
 <div className='container1'>
 
